@@ -25,11 +25,14 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { ThrashBox } from "./thrash-box";
+import { useSearch } from "@/hooks/use-search";
 
 export const Navigation = () => {
   const router = useRouter();
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
+
+  const search = useSearch();
 
   const create = useMutation(api.documents.create);
 
@@ -146,7 +149,7 @@ export const Navigation = () => {
         </div>
         <div className="">
           <UserItem />
-          <Item label="Search" icon={Search} isSearch onClick={() => {}} />
+          <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
           <Item label="Settings" icon={Settings} onClick={() => {}} />
           <Item onClick={handleCreate} label="New Page" icon={PlusCircle} />
         </div>
