@@ -3,7 +3,7 @@
 import { api } from "@/convex/_generated/api";
 import { Doc, Id } from "@/convex/_generated/dataModel";
 import { useQuery } from "convex/react";
-import { useParams, usePathname } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Item } from "./item";
@@ -21,7 +21,6 @@ export const DocumentList = ({
   level = 0,
 }: DocumentListProps) => {
   const params = useParams();
-  const pathname = usePathname();
   const router = useRouter();
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
