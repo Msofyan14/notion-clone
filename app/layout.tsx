@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className} dark:bg-[#1F1F1F]`}>
         <ConvexClientProvider>
           <EdgeStoreProvider>
             <ThemeProvider

@@ -54,6 +54,10 @@ const DocumentIdPage = ({ params }: DocumentIdPageProps) => {
     return <div>Not found</div>;
   }
 
+  if (!document.isPublished) {
+    throw new Error("Note is not published");
+  }
+
   return (
     <div className="pb-40">
       <Cover preview url={document.coverImage} />
